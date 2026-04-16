@@ -9,8 +9,14 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL }));
-app.use(express.json());
+app.use(cors({
+  origin: [
+    process.env.CLIENT_URL,
+    'https://complaint-system-sute.vercel.app',
+    'http://localhost:3000'
+  ],
+  credentials: true
+}));app.use(express.json());
 
 // Routes
 app.use('/api/auth',       require('./routes/authRoutes'));
