@@ -39,7 +39,9 @@ const AdminDashboard = () => {
     }
   };
 
-  useEffect(() => { fetchData(); }, []);
+  useEffect(() => {
+  fetchData();
+}, []);
 
   const openModal = (complaint) => {
     setSelected(complaint);
